@@ -18,8 +18,8 @@ const contactEmail = nodemailer.createTransport({
   host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-      user: 'ana.mraz@ethereal.email',
-      pass: 'HaWdgyycuMxzun31n7'
+      user: 'process.env.EMAIL_USER',
+      pass: 'process.env.EMAIL_PASS'
   }
 });
 
