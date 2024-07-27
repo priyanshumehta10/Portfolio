@@ -125,9 +125,9 @@ export const Skills = () => {
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
 
                         {  
-                          skills.map((skill) => {
+                          skills.map((skill,index) => {
                             return (
-                                <div className="item skill-imgbx">
+                                <div className="item skill-imgbx" key={index}>
                                 <img src={skill.imageUrl} alt={skill.title} />
                                 <div className="skill-txtx">
                                     <span>{skill.skill_percentage}</span>

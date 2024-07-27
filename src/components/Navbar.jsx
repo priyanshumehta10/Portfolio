@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
+// import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import {
   BrowserRouter as Router
 } from "react-router-dom";
+// import './NavBar.css'; // Import the CSS file for additional styling
 
 export const NavBar = () => {
 
@@ -16,10 +17,12 @@ export const NavBar = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (window.innerWidth > 767) {
+        if (window.scrollY > 50) {
+          setScrolled(true);
+        } else {
+          setScrolled(false);
+        }
       }
     }
 
@@ -34,10 +37,10 @@ export const NavBar = () => {
 
   return (
     <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar expand="md" className={`navbar-custom ${scrolled ? "scrolled" : ""}`}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" style={{height:60,width:70}}/>
+            <img src={logo} alt="Logo" className="navbar-logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
@@ -50,9 +53,9 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="https://www.linkedin.com/feed/" target="_blank"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="https://www.instagram.com/priyanshu.mehta10/" target="_blank"><img src={navIcon3} alt="instagram" /></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="LinkedIn" /></a>
+                {/* <a href="#"><img src={navIcon2} alt="Twitter" /></a> */}
+                <a href="https://www.instagram.com/priyanshu.mehta10/" target="_blank" rel="noopener noreferrer"><img src={navIcon3} alt="Instagram" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>

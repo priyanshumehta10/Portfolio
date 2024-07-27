@@ -737,3 +737,78 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .submit-button:hover {
   background-color: #0056b3;
 }
+
+/* NavBar.css */
+.navbar-custom {
+  background-color: transparent; /* Default transparent background */
+  transition: background-color 0.5s ease;
+}
+
+.navbar-custom.scrolled {
+  background-color: #000; /* Black background on scroll */
+}
+
+.navbar-brand .navbar-logo {
+  height: 60px;
+  width: 70px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* White link color for better contrast */
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active {
+  color: #007bff; /* Active link color */
+}
+
+.navbar-text .social-icon a img {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+}
+
+@media (max-width: 767px) {
+  .navbar-custom {
+    background-color: #000 !important; /* Always black background on small screens */
+  }
+
+  .navbar-brand .navbar-logo {
+    height: 50px;
+    width: 60px;
+  }
+  
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0;
+  }
+
+  .navbar-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .navbar-text .social-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .navbar-text .vvd {
+    width: 100%;
+    text-align: center;
+  }
+}
